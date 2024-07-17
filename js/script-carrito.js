@@ -28,7 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 id: card.getAttribute('data-id'),
                 nombre: card.getAttribute('data-nombre'),
                 precio: parseFloat(card.getAttribute('data-precio')),
-                cantidad: 1
+                cantidad: 1,
+                img: card.getAttribute('data-img')
             };
             addToCart(product);
         });
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cart.forEach(item => {
             const itemHTML = `
                 <div class="cart-item">
+                    <img src="${item.img}" alt="${item.nombre}" class="cart-item-img cart-img">
                     <h4>${item.nombre}</h4>
                     <p>$${item.precio} x ${item.cantidad}</p>
                     <button class="remove-item btn-card" data-id="${item.id}">Eliminar</button>
