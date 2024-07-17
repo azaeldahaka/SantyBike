@@ -355,5 +355,11 @@ ul{
     margin-top: 20px;
 }
 
+.total-carrito{
+    font-weight: 600;
+    margin-bottom: 10px;
+}
 
-
+.remove-item{
+    margin-top: 10px;
+}
