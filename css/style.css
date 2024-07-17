@@ -18,6 +18,9 @@ html {
     scroll-behavior: smooth;
 }
 
+.open {
+    display: block;
+}
 
 .navbar{
     display: flex;
