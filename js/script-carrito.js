@@ -35,6 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+     // Cerrar el carrito al hacer clic fuera de él
+     document.addEventListener('click', (e) => {
+        if (!cartAside.contains(e.target) && !cartIcon.contains(e.target) && !e.target.classList.contains('btn-card')) {
+            cartAside.classList.remove('open');
+        }
+    });
+
     // Función para añadir al carrito
     function addToCart(product) {
         const exists = cart.find(item => item.id === product.id);
@@ -55,9 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const itemHTML = `
                 <div class="cart-item">
                     <img src="${item.img}" alt="${item.nombre}" class="cart-item-img cart-img">
-                    <h4>${item.nombre}</h4>
-                    <p>$${item.precio} x ${item.cantidad}</p>
-                    <button class="remove-item btn-card" data-id="${item.id}">Eliminar</button>
+                    <div class="cart-item-details">
+                        <h4>${item.nombre}</h4>
+                        <p>$${item.precio} x ${item.cantidad}</p>
+                        <button class="remove-item btn-card" data-id="${item.id}">Eliminar</button>
+                    </div>
                 </div>
             `;
             cartItems.insertAdjacentHTML('beforeend', itemHTML);

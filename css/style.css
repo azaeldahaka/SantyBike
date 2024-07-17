@@ -367,15 +367,42 @@ ul{
     margin-bottom: 10px;
 }
 
+.buy-item:hover{
+    background-color: rgb(6, 215, 16);
+    color: #fff;
+}
+
 .remove-item{
     margin-top: 10px;
+    max-width: 50px;
+}
+
+.remove-item:hover{
+    background-color: #ff523b;
+    color: #ffffff;
 }
 
 .cart-img {
-    width: auto; /* Ajusta el ancho según sea necesario */
+    width: 120px; /* Ajusta el ancho según sea necesario */
     height: auto; /* Mantiene la proporción de la imagen */
     max-height: 100px; /* Ajusta la altura máxima según sea necesario */
     object-fit: cover; /* Hace que la imagen se recorte si es necesario para llenar el área */
 }
 
 
+/*--manejo de las imagenes en el aside--*/
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cart-item img.cart-img {
+    margin-right: 15px; /* Espacio entre la imagen y el texto */
+}
+
+.cart-item div.cart-item-details {
+    display: flex;
+    flex-direction: column;
+}
+/*-- fin del manejo de las imagenes del aside --*/
