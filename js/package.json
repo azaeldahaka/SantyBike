@@ -1,0 +1,28 @@
+{
+    "productos": [
+        {
+            "id": "1",
+            "nombre": "Bici locona",
+            "descripcion": "Una bici rápida y resistente.",
+            "precio": 80000,
+            "imagen": "img/bicis/bici01.png",
+            "raiting": 4
+        },
+        {
+            "id": "2",
+            "nombre": "Bici de montaña",
+            "descripcion": "Ideal para terrenos difíciles.",
+            "precio": 120000,
+            "imagen": "img/bicis/bici02.png",
+            "raiting": 5
+        },
+        {
+            "id": "3",
+            "nombre": "Bici de ciudad",
+            "descripcion": "Perfecta para el transporte urbano.",
+            "precio": 60000,
+            "imagen": "img/bicis/bici03.png",
+            "raiting": 3
+        }
+    ]
+}

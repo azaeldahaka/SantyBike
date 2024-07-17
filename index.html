@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SantyBike</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+</head>
+<body>
+
+    <!--Header inicio-->
+    <div class="header">
+
+        <div class="container" id="inicio">
+            <!--navbar inicio-->
+            <div class="navbar">
+    
+                <!--Logo de la marca inicio-->
+                <div class="logo">
+                    <i><a href="#inicio">SANTYBIKE</a></i>
+                </div>
+                <!--Logo de la marca fin-->
+    
+                <nav>
+                    <!--items inicio-->
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                    </ul>
+                    <!--items fin-->
+                </nav>
+                <a href=""><i class="fi fi-rs-shopping-cart icon-carrito"><span></span></i></a>
+                <a href=""><i class="fi fi-rr-user icon-user"></i></a>
+                
+            </div>
+            <!--nvabar fin-->
+    
+            <div class="row">
+                <div class="col-2">
+                    <h1>Bienvenido a nuestra tienda!</h1>
+                    <p>Lorem ipsum dolor, sit amet praesentium distinctio dignissimos eveniet.</p>
+                    <a href="" class="btn">Saber más &#8594</a>
+                </div>
+    
+                <div class="col-2">
+                    <img src="img/bicis/bici02.jpeg">
+                </div>
+            </div>
+    
+        </div>
+
+    </div>
+    <!--Header fin-->
+
+
+    <!--Aside del carrito-->
+    <aside id="carrito" class="carrito">
+        
+        <div class="carrito-header">
+            <h2>Carrito de Compras</h2>
+            <button id="cerrar-carrito">&times;</button>
+        </div>
+        
+        <div class="carrito-body">
+            <!-- Aquí se agregarán los productos -->
+        </div>
+        
+        <div class="carrito-footer">
+            <p>Total: <span id="total-carrito">$0</span></p>
+            <button id="vaciar-carrito">Vaciar Carrito</button>
+            <button id="comprar-carrito">Comprar</button>
+        </div>
+
+    </aside>
+    <!--Aside del carro fin-->
+
+
+
+    <!--Categorias sobre los productos inicio-->
+    <div class="categorias">
+        <h2 class="titulo">Productos variados</h2>
+        <div class="small-container">              
+            <div class="row">
+
+                <div class="col-3"><img src="img/cadena02.jpg" alt=""></div>
+                <div class="col-3"><img src="img/camara_rodado26_01.jpg" alt=""></div>
+                <div class="col-3"><img src="img/casco06.jpg" alt=""></div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!--Categorias sobre los productos fin-->
+
+
+
+    <!--Categorias inico-->
+    <div class="small-container">
+        <h2 class="titulo">Productos futuros</h2>
+
+        <div class="row">
+
+            <!--Tarjeta producto individual-->
+            <div class="col-4 card-prod">
+                <img src="img/bicis/bici01.png" alt="">
+                <h4 class="titulo-card">Bici locona</h4>
+                <div class="raiting">
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-rr-heart"></i>
+                </div>
+                <p class="precio-card">$80.000</p>
+                <button class="btn-card">Saber mas</button>
+            </div>
+
+            <!--Tarjeta producto individual-->
+            <div class="col-4 card-prod">
+                <img src="img/bicis/bici03.jpeg" alt="">
+                <h4 class="titulo-card">Bici locona</h4>
+                <div class="raiting">
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-rr-heart"></i>
+                </div>
+                <p class="precio-card">$120.000</p>
+                <button class="btn-card">Saber mas</button>
+            </div>
+
+            <!--Tarjeta producto individual-->
+            <div class="col-4 card-prod">
+                <img src="img/bicis/bici02.jpeg" alt="">
+                <h4 class="titulo-card">Bici locona</h4>
+                <div class="raiting">
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-rr-heart"></i>
+                </div>
+                <p class="precio-card">$95.000</p>
+                <button class="btn-card">Saber mas</button>
+            </div>
+
+        </div>
+        
+    </div>
+
+
+
+    <!--offer-->
+    <div class="offer">
+        <div class="small-container">
+
+            <div class="row">
+                <div class="col-2">
+                    <img src="img/cascos/casco06.jpg" class="offer-img">
+                </div>
+
+                <div class="col-2">
+                    <p>Exclusivo!</p>
+                    <h1>Casco fibra de carbono</h1>
+                    <small>Lorem ipsum dolor sit amet cojklnsectetur aklmdipisicing elit</small>
+                    <br>
+                    <a href="" class="btn">Comprar ahora</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    
+    <!--Productoss-->
+    <div class="small-container" id="productos">
+        <h2 class="titulo titulo-prod">Productos</h2>
+        <div class="row">
+
+            <!--Tarjeta producto individual-->
+            <div class="col-4 card-prod">
+                <img src="img/bicis/bici01.png" alt="">
+                <h4 class="titulo-card">Bici locona</h4>
+                <div class="descripcion-card">texto</div>
+                <div class="raiting">
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-rr-heart"></i>
+                </div>
+                <p class="precio-card">$80.000</p>
+                <button class="btn-card">Comprar</button>
+            </div>
+
+            <!--Tarjeta producto individual-->
+            <div class="col-4 card-prod">
+                <img src="img/bicis/bici03.jpeg" alt="">
+                <h4 class="titulo-card">Bici locona</h4>
+                <div class="descripcion-card">texto</div>
+                <div class="raiting">
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-rr-heart"></i>
+                </div>
+                <p class="precio-card">$120.000</p>
+                <button class="btn-card">Comprar</button>
+            </div>
+
+            <!--Tarjeta producto individual-->
+            <div class="col-4 card-prod">
+                <img src="img/bicis/bici02.jpeg" alt="">
+                <h4 class="titulo-card">Bici locona</h4>
+                <p class="descripcion-card">texto</p>
+                <div class="raiting">
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-rr-heart"></i>
+                </div>
+                <p class="precio-card">$95.000</p>
+                <button class="btn-card">Comprar</button>
+            </div>
+
+            <!--Tarjeta producto individual-->
+            <div class="col-4 card-prod">
+                <img src="img/cadenas/cadena01.jpg" alt="">
+                <h4 class="titulo-card" >Cadena</h4>
+             <p class="descripcion-card">texto</p>
+                <div class="raiting">
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-rr-heart"></i>
+                </div>
+                <p class="precio-card">$80.000</p>
+                <button class="btn-card">Comprar</button>
+            </div>
+
+            <!--Tarjeta producto individual-->
+            <div class="col-4 card-prod">
+                <img src="img/caja central cuadrante/caja01.jpg" alt="">
+                <h4 class="titulo-card">Caja central</h4>
+                <p class="descripcion-card">texto</p>
+                <div class="raiting">
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-rr-heart"></i>
+                </div>
+                <p class="precio-card">$120.000</p>
+                <button class="btn-card">Comprar</button>
+            </div>
+
+            <!--Tarjeta producto individual-->
+            <div class="col-4 card-prod">
+                <img src="img/camaras rodado 26/camara_rodado26_01.jpg" alt="">
+                <h4 class="titulo-card">Camara rodado 26</h4>
+                <p class="descripcion-card">texto</p>
+                <div class="raiting">
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-rr-heart"></i>
+                </div>
+                <p class="precio-card">$95.000</p>
+                <button class="btn-card">Comprar</button>
+            </div>
+
+            <!--Tarjeta producto individual-->
+            <div class="col-4 card-prod">
+                <img src="img/camaras rodado 28/CAMARA DE BICICLETA RODADO 28 URBANA 622 MM ANCHO 32 MM VALVUL.jpg" alt="">
+                <h4 class="titulo-card">Camara rodado 28</h4>
+                <p class="descripcion-card">texto</p>
+                <div class="raiting">
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-rr-heart"></i>
+                </div>
+                <p class="precio-card">$95.000</p>
+                <button class="btn-card">Comprar</button>
+            </div>
+
+            <!--Tarjeta producto individual-->
+            <div class="col-4 card-prod">
+                <img src="img/caja central press fit/CAJA PEDALERA SELLADA PRESS FIT DIAMETRO 41 MM LARGO  (1).jpg" alt="">
+                <h4 class="titulo-card">Caja central press</h4>
+                <p class="descripcion-card">texto</p>
+                <div class="raiting">
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-rr-heart"></i>
+                </div>
+                <p class="precio-card">$95.000</p>
+                <button class="btn-card">Comprar</button>
+            </div>
+
+            <!--Tarjeta producto individual-->
+            <div class="col-4 card-prod">
+                <img src="img/cadenas/cadena02.jpg" alt="">
+                <h4 class="titulo-card">Cadena</h4>
+                <p class="descripcion-card">texto</p>
+                <div class="raiting">
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-rr-heart"></i>
+                </div>
+                <p class="precio-card">$95.000</p>
+                <button class="btn-card">Comprar</button>
+            </div>
+
+            <!--Tarjeta producto individual-->
+            <div class="col-4 card-prod">
+                <img src="img/cascos/casco03.jpg" alt="">
+                <h4 class="titulo-card">Casco</h4>
+                <div class="descripcion-card">Casco de bici</div>
+                <div class="raiting">
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-rr-heart"></i>
+                </div>
+                <p class="precio-card">$95.000</p>
+                <button class="btn-card">Comprar</button>
+            </div>
+
+            <!--Tarjeta producto individual-->
+            <div class="col-4 card-prod">
+                <img src="img/cascos/casco04.jpg" alt="">
+                <h4 class="titulo-card">Casco</h4>
+                <p class="descripcion-card">Casco de bici</p>
+                <div class="raiting">
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-rr-heart"></i>
+                </div>
+                <p class="precio-card">$95.000</p>
+                <button class="btn-card">Comprar</button>
+            </div>
+
+            <!--Tarjeta producto individual-->
+            <div class="col-4 card-prod">
+                <img src="img/bicis/bici02.jpeg" alt="">
+                <h4 class="titulo-card">Bici locona</h4>
+                <p class="descripcion-card">Bicicleta marca venzo</p>
+                <div class="raiting">
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-sr-heart"></i>
+                    <i class="fi fi-rr-heart"></i>
+                </div>
+                <p class="precio-card">$95.000</p>
+                <button class="btn-card">Comprar</button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!--Informacion sobre nosotros-->
+    <div class="nosotros" id="nosotros">
+        <div class="small-container">
+            <h2 class="titulo">Nosotros</h2>
+            <div class="row">
+                <!--Toda la informacion sobre nosotros-->
+                <div class="col-2 info-nosotros">
+                    <h3>Quiénes Somos</h3>
+                    <p>Somos una empresa dedicada a ofrecer soluciones innovadoras en tecnología. Nuestro equipo está compuesto por profesionales apasionados y expertos en sus áreas.</p>
+                    <h3>Misión</h3>
+                    <p>Nuestra misión es proporcionar productos y servicios de alta calidad que mejoren la vida de nuestros clientes.</p>
+                    <h3>Visión</h3>
+                    <p>Aspiramos a ser líderes en el sector, reconocidos por nuestra innovación y compromiso con la excelencia.</p>
+                    <h3>Valores</h3>
+                    <ul>
+                        <li>Innovación</li>
+                        <li>Calidad</li>
+                        <li>Integridad</li>
+                        <li>Compromiso</li>
+                        <li>Trabajo en equipo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--Marcass-->
+    <div class="marcas">
+        <h2 class="titulo">Sponsors</h2>
+        <div class="small-container">
+            <div class="row">
+                <div class="col-5"><img src="img/logos/logo-mastercard.jpeg" ></div>
+                <div class="col-5"><img src="img/logos/logo-merida.png" ></div>
+                <div class="col-5"><img src="img/logos/logo-shimano.png" ></div>
+                <div class="col-5"><img src="img/logos/logo-venzo.jpeg" ></div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <!--footer-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Descarga nuestra app</h3>
+                    <p>Disponible para Android y Ios.</p>
+                </div>
+            
+                <div class="footer-col-2">
+                    <h2>SantyBike</h2>
+                    <p>Pagina dedicada a la venta de repuestos para biciletas.</p>
+
+                </div>
+
+                <div class="footer-col-3">
+                    <h3>Siguenos</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Instgram</li>
+                        <li>TikTok</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="js/script-carrito.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
