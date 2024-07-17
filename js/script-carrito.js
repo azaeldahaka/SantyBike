@@ -159,8 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = e.target.closest('.card-prod');
             const product = {
                 id: card.getAttribute('data-id'),
-                nombre: card.querySelector('.titulo-card').textContent,
-                precio: parseFloat(card.querySelector('.precio-card').textContent.replace('$', '')),
+                nombre: card.getAttribute('data-nombre'),
+                precio: parseFloat(card.getAttribute('data-precio')),
                 cantidad: 1
             };
             addToCart(product);

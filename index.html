@@ -12,52 +12,36 @@
 </head>
 <body>
 
-    <!--Header inicio-->
+    <!-- Header inicio -->
     <div class="header">
-
         <div class="container" id="inicio">
-            <!--navbar inicio-->
             <div class="navbar">
-    
-                <!--Logo de la marca inicio-->
                 <div class="logo">
                     <i><a href="#inicio">SANTYBIKE</a></i>
                 </div>
-                <!--Logo de la marca fin-->
-    
                 <nav>
-                    <!--items inicio-->
                     <ul>
                         <li><a href="#inicio">Inicio</a></li>
                         <li><a href="#productos">Productos</a></li>
                         <li><a href="#servicios">Servicios</a></li>
                         <li><a href="#nosotros">Nosotros</a></li>
                     </ul>
-                    <!--items fin-->
                 </nav>
-                <a href=""><i class="fi fi-rs-shopping-cart icon-carrito"></i><span id="cart-count">0</span></a>
+                <a href="#" id="cart-icon"><i class="fi fi-rs-shopping-cart icon-carrito"></i><span id="cart-count">0</span></a>
                 <a href=""><i class="fi fi-rr-user icon-user"></i></a>
-                
             </div>
-            <!--nvabar fin-->
-    
             <div class="row">
                 <div class="col-2">
                     <h1>Bienvenido a nuestra tienda!</h1>
                     <p>Lorem ipsum dolor, sit amet praesentium distinctio dignissimos eveniet.</p>
                     <a href="" class="btn">Saber más &#8594</a>
                 </div>
-    
                 <div class="col-2">
                     <img src="img/bicis/bici02.jpeg">
                 </div>
             </div>
-    
         </div>
-
     </div>
-    <!--Header fin-->
-
 
     <!-- Aside Carrito de Compras -->
     <aside id="cart-aside">
@@ -72,6 +56,7 @@
             <button class="btn-card" id="checkout">Comprar</button>
         </div>
     </aside>
+
     <!--Aside del carro fin-->
 
 
@@ -181,7 +166,7 @@
         <div class="row">
 
             <!--Tarjeta producto individual-->
-            <div class="col-4 card-prod">
+            <div class="col-4 card-prod" data-id="1" data-nombre="Bici locona" data-precio="80000">
                 <img src="img/bicis/bici01.png" alt="" id="cart-icon">
                 <h4 class="titulo-card">Bici locona</h4>
                 <div class="descripcion-card">texto</div>
@@ -197,9 +182,9 @@
             </div>
 
             <!--Tarjeta producto individual-->
-            <div class="col-4 card-prod">
+            <div class="col-4 card-prod" data-id="2" data-nombre="Bici locona 2" data-precio="120000">
                 <img src="img/bicis/bici03.jpeg" alt="" id="cart-icon">
-                <h4 class="titulo-card">Bici locona</h4>
+                <h4 class="titulo-card">Bici locona 2</h4>
                 <div class="descripcion-card">texto</div>
                 <div class="raiting">
                     <i class="fi fi-sr-heart"></i>
@@ -213,9 +198,9 @@
             </div>
 
             <!--Tarjeta producto individual-->
-            <div class="col-4 card-prod">
+            <div class="col-4 card-prod" data-id="3" data-nombre="Bici locona 3" data-precio="95000">
                 <img src="img/bicis/bici02.jpeg" alt="" id="cart-icon">
-                <h4 class="titulo-card">Bici locona</h4>
+                <h4 class="titulo-card">Bici locona 3</h4>
                 <p class="descripcion-card">texto</p>
                 <div class="raiting">
                     <i class="fi fi-sr-heart"></i>

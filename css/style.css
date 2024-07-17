@@ -292,83 +292,6 @@ ul{
     padding: 170px 0 100px 0;
 }
 
-
-/*---------ASIDE DEL CARRO----------*/
-/* Carrito de compras */
-/* #carrito {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 300px;
-    height: 100%;
-    background-color: #fff;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-    transition: right 0.3s ease;
-    z-index: 1000;
-}
-
-.carrito-header, .carrito-footer {
-    padding: 1rem;
-    border-bottom: 1px solid #ccc;
-}
-
-.carrito-header h2 {
-    margin: 0;
-    display: inline-block;
-}
-
-#cerrar-carrito {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    float: right;
-}
-
-.carrito-body {
-    padding: 1rem;
-    max-height: calc(100% - 160px);
-    overflow-y: auto;
-}
-
-.carrito-producto {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.carrito-producto img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-}
-
-.carrito-producto h4 {
-    margin: 0;
-    font-size: 1rem;
-}
-
-.carrito-producto .precio, .carrito-producto .cantidad {
-    margin: 0 1rem;
-}
-
-.carrito-footer p {
-    margin: 0;
-    display: inline-block;
-}
-
-#contador-productos {
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    padding: 0 5px;
-    font-size: 0.8rem;
-    position: absolute;
-    top: -10px;
-    right: -10px;
-} */
-
 /*-----------------ASIDE CARRO COMPRAS----------------------*/
 /* Estilos para el contador en el ícono del carrito */
 #cart-icon {
@@ -379,7 +302,7 @@ ul{
 #cart-count {
     position: absolute;
     top: -10px;
-    right: -10px;
+    right: 0px;
     background: red;
     color: white;
     border-radius: 50%;
@@ -405,6 +328,7 @@ ul{
 #cart-aside.open {
     right: 0;
 }
+
 
 .cart-header {
     display: flex;
