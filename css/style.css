@@ -406,3 +406,20 @@ ul{
     flex-direction: column;
 }
 /*-- fin del manejo de las imagenes del aside --*/
+
+
+/*-- Estilos del boton de filtro --*/
+
+.hidden {
+    display: none;
+}
+
+#filter-options {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/*-- Fin del boton de filtro--*/

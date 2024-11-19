@@ -60,6 +60,33 @@
     <!--Aside del carro fin-->
 
 
+    <!-- Boton de filtro -->
+    <div id="filter-section">
+        <button id="filter-btn">Filtrar productos</button>
+        <div id="filter-options" class="hidden">
+            <label>
+                Categoría:
+                <select id="filter-category">
+                    <option value="all">Todas</option>
+                    <option value="bicicletas">Bicicletas</option>
+                    <option value="accesorios">Accesorios</option>
+                </select>
+            </label>
+            <label>
+                Precio máximo:
+                <input type="number" id="filter-price" placeholder="Ej. 5000" />
+            </label>
+            <button id="apply-filters">Aplicar filtros</button>
+        </div>
+
+        <div id="product-list">
+            
+        </div>
+
+    </div>
+    <!-- Fin de Boton de filtro-->
+
+
 
     <!--Categorias sobre los productos inicio-->
     <div class="categorias">
@@ -432,6 +459,7 @@
     </footer>
 
     <script src="js/script-carrito.js"></script>
+    <script src="js/boton-filtro.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
