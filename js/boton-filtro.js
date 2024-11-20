@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const filterBtn = document.getElementById('apply-filters-btn');
     const filterOptions = document.getElementById('filter-options');
-    const productosDiv = document.getElementById('productos');
+    const productosDiv = document.getElementById('row');
     let productos = [];
 
     // Cargar productos desde el JSON
@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Renderizar productos
         productsToRender.forEach(product => {
             const productHTML = `
-                <div class="product-card" data-id="${product.id}" data-nombre="${product.nombre}" data-precio="${product.precio}" data-img="${product.imagen}">
-                    <img src="${product.imagen}" alt="${product.nombre}" class="cart-item-img">
+                <div class="col-4 card-prod" data-id="${product.id}" data-nombre="${product.nombre}" data-precio="${product.precio}" data-img="${product.imagen}">
+                    <img src="${product.imagen}" alt="${product.nombre}" id="product-img" class="cart-item-img">
                     <h4 class="titulo-card">${product.nombre}</h4>
                     <div class="descripcion-card">${product.descripcion}</div>
                     <div class="raiting">

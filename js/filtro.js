@@ -43,16 +43,17 @@ function renderProducts() {
 
   filteredProducts.forEach(product => {
     const productCard = `
-      <div class="product-card">
-        <img src="${product.image}" alt="${product.name}">
-        <h3>${product.name}</h3>
-        <p>${product.description}</p>
-        <p>$${product.price.toFixed(2)}</p>
+      <div class="col-4 card-prod" data-id="${product.id}" data-nombre="${product.nombre}" data-precio="${product.precio}" data-img="${product.imagen}">
+        <img src="${product.image}" alt="${product.name}" class="cart-item-img">
+        <h4 class="titulo-card">${product.name}</h4>
+        <p class="descripcion-card">${product.description}</p>
+        <p class="precio-card">$${product.price.toFixed(2)}</p>
         <div class="rating">
           ${[...Array(5)].map((_, i) => `
             <span class="${i < product.rating ? 'filled' : ''}">★</span>
           `).join('')}
         </div>
+        <button class="btn-card">Comprar</button>
       </div>
     `;
     productGrid.innerHTML += productCard;  // Añadir el producto al contenedor
