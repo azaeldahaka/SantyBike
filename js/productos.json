@@ -1,0 +1,76 @@
+{
+    "productos": [
+        {
+            "id": "1",
+            "nombre": "Bici locona",
+            "descripcion": "Una bici rápida y resistente.",
+            "precio": 80000,
+            "imagen": "img/bicis/bici01.png",
+            "raiting": 4,
+            "categoria": "bicicletas"
+        },
+        {
+            "id": "2",
+            "nombre": "Bici de montaña",
+            "descripcion": "Ideal para terrenos difíciles.",
+            "precio": 120000,
+            "imagen": "img/bicis/bici02.png",
+            "raiting": 5,
+            "categoria": "bicicletas"
+        },
+        {
+            "id": "3",
+            "nombre": "Bici de ciudad",
+            "descripcion": "Perfecta para el transporte urbano.",
+            "precio": 60000,
+            "imagen": "img/bicis/bici03.png",
+            "raiting": 3,
+            "categoria": "bicicletas"
+        },
+        {
+            "id": "4",
+            "nombre": "Bici plegable",
+            "descripcion": "Compacta y fácil de guardar.",
+            "precio": 70000,
+            "imagen": "img/bicis/bici04.png",
+            "raiting": 4,
+            "categoria": "bicicletas"
+        },
+        {
+            "id": "5",
+            "nombre": "Bici eléctrica",
+            "descripcion": "Eficiencia y velocidad con asistencia eléctrica.",
+            "precio": 150000,
+            "imagen": "img/bicis/bici05.png",
+            "raiting": 5,
+            "categoria": "bicicletas"
+        },
+        {
+            "id": "6",
+            "nombre": "Bici clásica",
+            "descripcion": "Un diseño atemporal para el paseo diario.",
+            "precio": 50000,
+            "imagen": "img/bicis/bici06.png",
+            "raiting": 3,
+            "categoria": "bicicletas"
+        },
+        {
+            "id": "7",
+            "nombre": "Bici BMX",
+            "descripcion": "Para los amantes de los trucos y el freestyle.",
+            "precio": 85000,
+            "imagen": "img/bicis/bici07.png",
+            "raiting": 4,
+            "categoria": "bicicletas"
+        },
+        {
+            "id": "8",
+            "nombre": "Bici de carrera",
+            "descripcion": "Máxima velocidad y rendimiento en carretera.",
+            "precio": 200000,
+            "imagen": "img/bicis/bici08.png",
+            "raiting": 5,
+            "categoria": "bicicletas"
+        }
+    ]
+}
