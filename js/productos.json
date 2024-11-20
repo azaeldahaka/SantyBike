@@ -11,10 +11,10 @@
         },
         {
             "id": "2",
-            "nombre": "Bici de montaña",
+            "nombre": "Bici locona 2",
             "descripcion": "Ideal para terrenos difíciles.",
             "precio": 120000,
-            "imagen": "img/bicis/bici02.png",
+            "imagen": "img/bicis/bici03.jpeg",
             "raiting": 5,
             "categoria": "bicicletas"
         },
@@ -22,53 +22,85 @@
             "id": "3",
             "nombre": "Bici de ciudad",
             "descripcion": "Perfecta para el transporte urbano.",
-            "precio": 60000,
-            "imagen": "img/bicis/bici03.png",
+            "precio": 95000,
+            "imagen": "img/bicis/bici02.jpeg",
             "raiting": 3,
             "categoria": "bicicletas"
         },
         {
             "id": "4",
-            "nombre": "Bici plegable",
+            "nombre": "cadena",
             "descripcion": "Compacta y fácil de guardar.",
-            "precio": 70000,
-            "imagen": "img/bicis/bici04.png",
+            "precio": 80000,
+            "imagen": "img/cadenas/cadena01.jpg",
             "raiting": 4,
-            "categoria": "bicicletas"
+            "categoria": "cadenas"
         },
         {
             "id": "5",
-            "nombre": "Bici eléctrica",
+            "nombre": "Caja central",
             "descripcion": "Eficiencia y velocidad con asistencia eléctrica.",
-            "precio": 150000,
-            "imagen": "img/bicis/bici05.png",
+            "precio": 120000,
+            "imagen": "img/caja central cuadrante/caja01.jpg",
             "raiting": 5,
-            "categoria": "bicicletas"
+            "categoria": "cajas"
         },
         {
             "id": "6",
-            "nombre": "Bici clásica",
+            "nombre": "camara rodado 26",
             "descripcion": "Un diseño atemporal para el paseo diario.",
-            "precio": 50000,
-            "imagen": "img/bicis/bici06.png",
+            "precio": 95000,
+            "imagen": "img/camaras rodado 26/camara_rodado26_01.jpg",
             "raiting": 3,
-            "categoria": "bicicletas"
+            "categoria": "camaras"
         },
         {
             "id": "7",
-            "nombre": "Bici BMX",
+            "nombre": "camara rodado 28",
             "descripcion": "Para los amantes de los trucos y el freestyle.",
-            "precio": 85000,
-            "imagen": "img/bicis/bici07.png",
+            "precio": 95000,
+            "imagen": "img/camaras rodado 28/CAMARA DE BICICLETA RODADO 28 URBANA 622 MM ANCHO 32 MM VALVUL.jpg",
             "raiting": 4,
-            "categoria": "bicicletas"
+            "categoria": "camaras"
         },
         {
             "id": "8",
-            "nombre": "Bici de carrera",
+            "nombre": "caja central press",
             "descripcion": "Máxima velocidad y rendimiento en carretera.",
             "precio": 200000,
-            "imagen": "img/bicis/bici08.png",
+            "imagen": "img/caja central press fit/CAJA PEDALERA SELLADA PRESS FIT DIAMETRO 41 MM LARGO  (1).jpg",
+            "raiting": 5,
+            "categoria": "cajas"
+        },{
+            "id": "9",
+            "nombre": "cadena",
+            "descripcion": "Cadena super cadenosa",
+            "precio": 950000,
+            "imagen": "img/cadenas/cadena02.jpg",
+            "raiting": 4,
+            "categoria": "cadenas"
+        },{
+            "id": "10",
+            "nombre": "casco",
+            "descripcion": "Casco de bici",
+            "precio": 95000,
+            "imagen": "img/cascos/casco03.jpg",
+            "raiting": 4,
+            "categoria": "cascos"
+        },{
+            "id": "11",
+            "nombre": "casco",
+            "descripcion": "Casco de bici",
+            "precio": 90000,
+            "imagen": "img/cascos/casco04.jpg",
+            "raiting": 3.5,
+            "categoria": "cascos"
+        },{
+            "id": "12",
+            "nombre": "Bici de ciudad locona",
+            "descripcion": "Perfecta para el transporte urbano.",
+            "precio": 100000,
+            "imagen": "img/bicis/bici02.jpeg",
             "raiting": 5,
             "categoria": "bicicletas"
         }

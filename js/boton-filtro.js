@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const filterBtn = document.getElementById('filter-btn');
+    const filterBtn = document.getElementById('apply-filters-btn');
     const filterOptions = document.getElementById('filter-options');
-    const applyFiltersBtn = document.getElementById('apply-filters');
-    const productosDiv = document.getElementById('productos');  // Aquí apuntamos al div productos
-    
+    const productosDiv = document.getElementById('productos');
     let productos = [];
 
     // Cargar productos desde el JSON
@@ -11,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             productos = data.productos;
-            renderizarProductos(productos); // Renderizar productos al cargar la página
+            renderizarProductos(productos);  // Mostrar productos al cargar
         })
         .catch(error => {
             console.error('Error al cargar los productos:', error);
@@ -22,27 +20,39 @@ document.addEventListener('DOMContentLoaded', () => {
         filterOptions.classList.toggle('hidden');
     });
 
-    // Aplicar filtros
-    applyFiltersBtn.addEventListener('click', () => {
-        const category = document.getElementById('filter-category').value;
-        const maxPrice = document.getElementById('filter-price').value;
+    // Agregar evento de 'click' para aplicar filtros solo si los elementos están presentes
+    const applyFiltersBtn = document.getElementById('apply-filters');
+    if (applyFiltersBtn) {
+        applyFiltersBtn.addEventListener('click', () => {
+            const category = document.getElementById('filter-category').value;
+            const maxPrice = document.getElementById('filter-price').value;
 
-        const filteredProducts = productos.filter(product => {
-            const matchesCategory = category === 'all' || product.categoria === category;
-            const matchesPrice = !maxPrice || product.precio <= parseFloat(maxPrice);
-            return matchesCategory && matchesPrice;
+            // Filtrar productos
+            const filteredProducts = productos.filter(product => {
+                const matchesCategory = category === 'all' || product.categoria === category;
+                const matchesPrice = !maxPrice || product.precio <= parseFloat(maxPrice);
+                return matchesCategory && matchesPrice;
+            });
+
+            renderizarProductos(filteredProducts);  // Renderizar productos filtrados
         });
-
-        renderizarProductos(filteredProducts);  // Actualizar solo el div productos
-    });
-
-    // Renderizar productos dentro de #productos
+    }
+    
+    // Función para renderizar productos
     function renderizarProductos(productsToRender) {
         productosDiv.innerHTML = ''; // Limpiar productos existentes
+
+        // Verificar si hay productos que renderizar
+        if (productsToRender.length === 0) {
+            productosDiv.innerHTML = '<p>No se encontraron productos con los filtros seleccionados.</p>';
+            return;
+        }
+
+        // Renderizar productos
         productsToRender.forEach(product => {
             const productHTML = `
                 <div class="product-card" data-id="${product.id}" data-nombre="${product.nombre}" data-precio="${product.precio}" data-img="${product.imagen}">
-                    <img src="${product.imagen}" alt="${product.nombre}" id="product-img" class="cart-item-img">
+                    <img src="${product.imagen}" alt="${product.nombre}" class="cart-item-img">
                     <h4 class="titulo-card">${product.nombre}</h4>
                     <div class="descripcion-card">${product.descripcion}</div>
                     <div class="raiting">
@@ -71,15 +81,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Renderizar estrellas de rating
     function renderRating(rating) {
         let stars = '';
-        for (let i = 0; i < 5; i++) {
-            stars += i < rating ? '<i class="fi fi-sr-heart"></i>' : '<i class="fi fi-rr-heart"></i>';
+        for (let i = 1; i <= 5; i++) {
+            if (i <= rating) {
+                stars += '★'; // estrella rellena
+            } else {
+                stars += '☆'; // estrella vacía
+            }
         }
         return stars;
     }
+    
 
     // Función para agregar al carrito
     function agregarAlCarrito(product) {
         console.log('Producto agregado al carrito:', product);
-        // Aquí puedes agregar la lógica para guardar el producto en el carrito.
     }
 });

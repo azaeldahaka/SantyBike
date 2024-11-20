@@ -156,28 +156,22 @@
     </div>
 
     <!-- Boton de filtro -->
-    <div id="filter-section">
-        <button id="filter-btn">Filtrar productos</button>
-        <div id="filter-options" class="hidden">
-            <label>
-                Categoría:
-                <select id="filter-category">
-                    <option value="all">Todas</option>
-                    <option value="bicicletas">Bicicletas</option>
-                    <option value="accesorios">Accesorios</option>
-                </select>
-            </label>
-            <label>
-                Precio máximo:
-                <input type="number" id="filter-price" placeholder="Ej. 5000" />
-            </label>
-            <button id="apply-filters">Aplicar filtros</button>
+    <div>
+        <select id="filter-options" class="hidden">
+          <option value="all">Todos</option>
+          <option value="highRated">Mejor Calificados</option>
+          <option value="lowPrice">Precio &lt; $500</option>
+          <option value="highPrice">Precio &gt;= $500</option>
+          <option value="cadenas">Cadenas</option>
+          <option value="cajas">Cajas</option>
+          <option value="cascos">Cascos</option>
+        </select>
+      
+        <button id="apply-filters-btn">Aplicar Filtro</button> <!-- Botón para aplicar filtro -->
+      
+        <div id="product-grid">
+          <!-- Los productos filtrados se mostrarán aquí -->
         </div>
-
-        <div id="product-list">
-
-        </div>
-
     </div>
     <!-- Fin de Boton de filtro-->
 
@@ -186,7 +180,7 @@
     <!--Productoss-->
     <div class="small-container" id="productos">
         <h2 class="titulo titulo-prod">Productos</h2>
-        <div class="row">
+        <div class="row filter-category">
 
             <!--Tarjeta producto individual-->
             <div class="col-4 card-prod" data-id="1" data-nombre="Bici locona" data-precio="80000" data-img="img/bicis/bici01.png">
@@ -312,7 +306,7 @@
                     <i class="fi fi-sr-heart"></i>
                     <i class="fi fi-rr-heart"></i>
                 </div>
-                <p class="precio-card">$95.000</p>
+                <p class="precio-card">$200.000</p>
                 <button class="btn-card">Comprar</button>
             </div>
 
@@ -376,7 +370,7 @@
                     <i class="fi fi-sr-heart"></i>
                     <i class="fi fi-rr-heart"></i>
                 </div>
-                <p class="precio-card">$95.000</p>
+                <p class="precio-card">$100.000</p>
                 <button class="btn-card">Comprar</button>
             </div>
 
@@ -385,14 +379,10 @@
 
 
     <!-- Productos filtrados -->
-    <div id="productos" class="row">
+    <div id="product-container" class="row">
         <!-- Aquí solo se cargan los productos cuando se aplica el filtro -->
     </div>
       
-    <div id="productos-container">
-
-    </div>
-
 
     <!--Informacion sobre nosotros-->
     <div class="nosotros" id="nosotros">
@@ -466,8 +456,8 @@
     </footer>
 
     <script src="js/script-carrito.js"></script>
-    <script src="js/boton-filtro.js"></script>
     <script src="js/filtro.js"></script>
+    <script src="js/boton-filtro.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

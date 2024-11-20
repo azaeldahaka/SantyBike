@@ -1,57 +1,66 @@
-// Filtrar productos por precio
-const filterByPrice = (minPrice, maxPrice) => {
-    const products = document.querySelectorAll('.card-prod');
-    products.forEach(product => {
-      const price = parseInt(product.getAttribute('data-precio'));
-      if (price >= minPrice && price <= maxPrice) {
-        product.style.display = 'block'; // Muestra el producto
-      } else {
-        product.style.display = 'none'; // Oculta el producto
-      }
-    });
-  };
-  
-  // Filtrar productos por nombre
-const filterByName = (searchTerm) => {
-    const products = document.querySelectorAll('.card-prod');
-    products.forEach(product => {
-      const name = product.getAttribute('data-nombre').toLowerCase();
-      if (name.includes(searchTerm.toLowerCase())) {
-        product.style.display = 'block'; // Muestra el producto
-      } else {
-        product.style.display = 'none'; // Oculta el producto
-      }
-    });
-};
 
-// Definir la función para actualizar productos
-function actualizarProductos(filtrados) {
-    const contenedor = document.getElementById('productos');
-    contenedor.innerHTML = '';  // Vaciar contenido actual
-    if (filtrados.length === 0) {
-        contenedor.innerHTML = '<p>No hay productos que coincidan con el filtro.</p>';
+let products = [];  // Array de productos vacío
+let filteredProducts = [];  // Array de productos filtrados
+
+// Función para cargar productos desde el archivo JSON
+function loadProducts() {
+  // Cargar el JSON correctamente
+  fetch('./js/productos.json')
+  .then(response => response.json())
+  .then(data => {
+    const productos = data.productos; // Asegúrate de que esto es un array
+    if (Array.isArray(productos)) {
+      products = productos; // Asignar el array a la variable global
+      renderProducts(); // O llama a una función para mostrar los productos
     } else {
-        filtrados.forEach(producto => {
-            const productoElement = document.createElement('div');
-            productoElement.classList.add('col-4', 'card-prod');
-            productoElement.innerHTML = `
-                <img src="${producto.img}" alt="" class="cart-item-img">
-                <h4 class="titulo-card">${producto.nombre}</h4>
-                <p class="descripcion-card">${producto.descripcion}</p>
-                <p class="precio-card">$${producto.precio}</p>
-            `;
-            contenedor.appendChild(productoElement);
-        });
+      console.error('Error: los productos no son un array');
     }
+  })
+  .catch(error => console.error('Error al cargar los productos:', error));
 }
 
-// Ejemplo de cómo aplicar un filtro:
-document.getElementById('filtro').addEventListener('click', function() {
-    const productosFiltrados = aplicarFiltro(); // Aplica el filtro aquí
-    actualizarProductos(productosFiltrados);
+// Función para aplicar el filtro
+function applyFilter() {
+  const filter = document.getElementById('filter-options').value;
+  
+  if (filter === 'all') {
+    filteredProducts = [...products];  // Mostrar todos los productos
+  } else if (filter === 'highRated') {
+    filteredProducts = products.filter(product => product.rating >= 4);  // Filtro por calificación alta
+  } else if (filter === 'lowPrice') {
+    filteredProducts = products.filter(product => product.price < 500);  // Filtro por precio bajo
+  } else if (filter === 'highPrice') {
+    filteredProducts = products.filter(product => product.price >= 500);  // Filtro por precio alto
+  }
+
+  renderProducts();  // Renderizar los productos filtrados
+}
+
+// Función para renderizar los productos
+function renderProducts() {
+  const productGrid = document.getElementById('product-grid');
+  productGrid.innerHTML = '';  // Limpiar el contenedor de productos
+
+  filteredProducts.forEach(product => {
+    const productCard = `
+      <div class="product-card">
+        <img src="${product.image}" alt="${product.name}">
+        <h3>${product.name}</h3>
+        <p>${product.description}</p>
+        <p>$${product.price.toFixed(2)}</p>
+        <div class="rating">
+          ${[...Array(5)].map((_, i) => `
+            <span class="${i < product.rating ? 'filled' : ''}">★</span>
+          `).join('')}
+        </div>
+      </div>
+    `;
+    productGrid.innerHTML += productCard;  // Añadir el producto al contenedor
+  });
+}
+
+// Inicializar el filtro cuando el documento esté cargado
+document.addEventListener('DOMContentLoaded', () => {
+  loadProducts();  // Cargar los productos cuando se cargue el DOM
+  document.getElementById('apply-filters-btn').addEventListener('click', applyFilter);  // Añadir el evento al botón de filtro
 });
-
-function aplicarFiltro() {
-    // Simular un filtro
-    return productos.filter(producto => producto.precio < 100); // Ejemplo de filtro
-}
