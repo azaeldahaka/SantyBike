@@ -11,10 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let cart = [];
 
     // Abrir y cerrar el carrito
-    cartIcon.addEventListener('click', () => {
-        //cartAside.style.top = `${window.scrollY}px`;
+    cartIcon.addEventListener('click', (e) => {
+        e.preventDefault(); // Evita que el navegador haga scroll hacia arriba
         cartAside.classList.toggle('open');
     });
+
 
     closeCart.addEventListener('click', () => {
         cartAside.classList.remove('open');
@@ -88,4 +89,5 @@ document.addEventListener('DOMContentLoaded', () => {
         cart = [];
         updateCart();
     });
+    
 });
