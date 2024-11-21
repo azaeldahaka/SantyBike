@@ -12,71 +12,49 @@
 </head>
 <body>
 
-    <!--Header inicio-->
+    <!-- Header inicio -->
     <div class="header">
-
         <div class="container" id="inicio">
-            <!--navbar inicio-->
             <div class="navbar">
-    
-                <!--Logo de la marca inicio-->
                 <div class="logo">
                     <i><a href="#inicio">SANTYBIKE</a></i>
                 </div>
-                <!--Logo de la marca fin-->
-    
                 <nav>
-                    <!--items inicio-->
                     <ul>
                         <li><a href="#inicio">Inicio</a></li>
                         <li><a href="#productos">Productos</a></li>
                         <li><a href="#servicios">Servicios</a></li>
                         <li><a href="#nosotros">Nosotros</a></li>
                     </ul>
-                    <!--items fin-->
                 </nav>
-                <a href=""><i class="fi fi-rs-shopping-cart icon-carrito"><span></span></i></a>
-                <a href=""><i class="fi fi-rr-user icon-user"></i></a>
-                
+                <a href="#" id="cart-icon"><i class="fi fi-rs-shopping-cart icon-carrito"></i><span id="cart-count">0</span></a>
+                <a href="#"><i class="fi fi-rr-user icon-user"></i></a>
             </div>
-            <!--nvabar fin-->
-    
             <div class="row">
                 <div class="col-2">
                     <h1>Bienvenido a nuestra tienda!</h1>
                     <p>Lorem ipsum dolor, sit amet praesentium distinctio dignissimos eveniet.</p>
                     <a href="" class="btn">Saber más &#8594</a>
                 </div>
-    
                 <div class="col-2">
                     <img src="img/bicis/bici02.jpeg">
                 </div>
             </div>
-    
         </div>
-
     </div>
-    <!--Header fin-->
 
-
-    <!--Aside del carrito-->
-    <aside id="carrito" class="carrito">
-        
-        <div class="carrito-header">
+    <!-- Aside Carrito de Compras -->
+    <aside id="cart-aside">
+        <div class="cart-header">
             <h2>Carrito de Compras</h2>
-            <button id="cerrar-carrito">&times;</button>
+            <button class="btn-card" id="close-cart">&times;</button>
         </div>
-        
-        <div class="carrito-body">
-            <!-- Aquí se agregarán los productos -->
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+            <p class="total-carrito">Total: $<span id="cart-total">0</span></p>
+            <button class="btn-card" id="clear-cart">Vaciar Carrito</button>
+            <button class="btn-card buy-item" id="checkout">Comprar</button>
         </div>
-        
-        <div class="carrito-footer">
-            <p>Total: <span id="total-carrito">$0</span></p>
-            <button id="vaciar-carrito">Vaciar Carrito</button>
-            <button id="comprar-carrito">Comprar</button>
-        </div>
-
     </aside>
     <!--Aside del carro fin-->
 
@@ -108,8 +86,8 @@
         <div class="row">
 
             <!--Tarjeta producto individual-->
-            <div class="col-4 card-prod">
-                <img src="img/bicis/bici01.png" alt="">
+            <div class="col-4 card-prod" data-id="1" data-nombre="Bici locona" data-precio="80000" data-img="img/bicis/bici01.png">
+                <img src="img/bicis/bici01.png" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card">Bici locona</h4>
                 <div class="raiting">
                     <i class="fi fi-sr-heart"></i>
@@ -123,9 +101,9 @@
             </div>
 
             <!--Tarjeta producto individual-->
-            <div class="col-4 card-prod">
-                <img src="img/bicis/bici03.jpeg" alt="">
-                <h4 class="titulo-card">Bici locona</h4>
+            <div class="col-4 card-prod" data-id="2" data-nombre="Bici locona 2" data-precio="120000" data-img="img/bicis/bici03.jpeg">
+                <img src="img/bicis/bici03.jpeg" alt="" id="product-img" class="cart-item-img">
+                <h4 class="titulo-card">Bici locona 2</h4>
                 <div class="raiting">
                     <i class="fi fi-sr-heart"></i>
                     <i class="fi fi-sr-heart"></i>
@@ -138,9 +116,9 @@
             </div>
 
             <!--Tarjeta producto individual-->
-            <div class="col-4 card-prod">
-                <img src="img/bicis/bici02.jpeg" alt="">
-                <h4 class="titulo-card">Bici locona</h4>
+            <div class="col-4 card-prod" data-id="3" data-nombre="Bici locona 3" data-precio="70000" data-img="img/bicis/bici02.jpeg">
+                <img src="img/bicis/bici02.jpeg" alt="" id="product-img" class="cart-item-img">
+                <h4 class="titulo-card">Bici locona 3</h4>
                 <div class="raiting">
                     <i class="fi fi-sr-heart"></i>
                     <i class="fi fi-sr-heart"></i>
@@ -148,12 +126,10 @@
                     <i class="fi fi-sr-heart"></i>
                     <i class="fi fi-rr-heart"></i>
                 </div>
-                <p class="precio-card">$95.000</p>
+                <p class="precio-card">$70.000</p>
                 <button class="btn-card">Saber mas</button>
             </div>
-
         </div>
-        
     </div>
 
 
@@ -180,15 +156,40 @@
     </div>
 
 
-    
-    <!--Productoss-->
+    <!-- Contenedor de productos -->
     <div class="small-container" id="productos">
         <h2 class="titulo titulo-prod">Productos</h2>
-        <div class="row">
 
-            <!--Tarjeta producto individual-->
-            <div class="col-4 card-prod">
-                <img src="img/bicis/bici01.png" alt="">
+        <!-- Boton de filtro -->
+        <div>
+            <button id="apply-filters-btn">Aplicar Filtro</button>
+            <select id="filter-options">
+            <option value="all">Todos</option>
+            <option value="highRated">Mejor Calificados</option>
+            <option value="lowPrice">Precio &lt; $50000</option>
+            <option value="highPrice">Precio &gt;= $50000</option>
+            <option value="cadenas">Cadenas</option>
+            <option value="cajas">Cajas</option>
+            <option value="cascos">Cascos</option>
+            </select>
+        </div>
+        <!--Fin boton de filtro-->
+
+        <div class="row filter-category" id="productos-container">
+            <!--Aqui se supone que se renderizan los productos-->
+    
+        </div>
+    </div>
+
+    
+    <!--Productoss
+    <div class="small-container" id="productos">
+        <h2 class="titulo titulo-prod">Productos</h2>
+        <div class="row filter-category">
+
+            
+            <div class="col-4 card-prod" data-id="1" data-nombre="Bici locona" data-precio="80000" data-img="img/bicis/bici01.png">
+                <img src="img/bicis/bici01.png" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card">Bici locona</h4>
                 <div class="descripcion-card">texto</div>
                 <div class="raiting">
@@ -202,10 +203,10 @@
                 <button class="btn-card">Comprar</button>
             </div>
 
-            <!--Tarjeta producto individual-->
-            <div class="col-4 card-prod">
-                <img src="img/bicis/bici03.jpeg" alt="">
-                <h4 class="titulo-card">Bici locona</h4>
+            
+            <div class="col-4 card-prod" data-id="2" data-nombre="Bici locona 2" data-precio="120000" data-img="img/bicis/bici03.jpeg">
+                <img src="img/bicis/bici03.jpeg" alt="" id="product-img" class="cart-item-img">
+                <h4 class="titulo-card">Bici locona 2</h4>
                 <div class="descripcion-card">texto</div>
                 <div class="raiting">
                     <i class="fi fi-sr-heart"></i>
@@ -218,10 +219,10 @@
                 <button class="btn-card">Comprar</button>
             </div>
 
-            <!--Tarjeta producto individual-->
-            <div class="col-4 card-prod">
-                <img src="img/bicis/bici02.jpeg" alt="">
-                <h4 class="titulo-card">Bici locona</h4>
+            
+            <div class="col-4 card-prod" data-id="3" data-nombre="Bici locona 3" data-precio="95000" data-img="img/bicis/bici02.jpeg">
+                <img src="img/bicis/bici02.jpeg" alt="" id="product-img" class="cart-item-img">
+                <h4 class="titulo-card">Bici locona 3</h4>
                 <p class="descripcion-card">texto</p>
                 <div class="raiting">
                     <i class="fi fi-sr-heart"></i>
@@ -234,9 +235,9 @@
                 <button class="btn-card">Comprar</button>
             </div>
 
-            <!--Tarjeta producto individual-->
-            <div class="col-4 card-prod">
-                <img src="img/cadenas/cadena01.jpg" alt="">
+            
+            <div class="col-4 card-prod" data-id="4" data-nombre="Cadena" data-precio="80000" data-img="img/cadenas/cadena01.jpg">
+                <img src="img/cadenas/cadena01.jpg" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card" >Cadena</h4>
              <p class="descripcion-card">texto</p>
                 <div class="raiting">
@@ -250,9 +251,9 @@
                 <button class="btn-card">Comprar</button>
             </div>
 
-            <!--Tarjeta producto individual-->
-            <div class="col-4 card-prod">
-                <img src="img/caja central cuadrante/caja01.jpg" alt="">
+           
+            <div class="col-4 card-prod" data-id="5" data-nombre="Caja central" data-precio="120000" data-img="img/caja central cuadrante/caja01.jpg">
+                <img src="img/caja central cuadrante/caja01.jpg" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card">Caja central</h4>
                 <p class="descripcion-card">texto</p>
                 <div class="raiting">
@@ -266,9 +267,9 @@
                 <button class="btn-card">Comprar</button>
             </div>
 
-            <!--Tarjeta producto individual-->
-            <div class="col-4 card-prod">
-                <img src="img/camaras rodado 26/camara_rodado26_01.jpg" alt="">
+           
+            <div class="col-4 card-prod" data-id="6" data-nombre="Camara rodado 26" data-precio="95000" data-img="img/camaras rodado 26/camara_rodado26_01.jpg">
+                <img src="img/camaras rodado 26/camara_rodado26_01.jpg" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card">Camara rodado 26</h4>
                 <p class="descripcion-card">texto</p>
                 <div class="raiting">
@@ -282,9 +283,9 @@
                 <button class="btn-card">Comprar</button>
             </div>
 
-            <!--Tarjeta producto individual-->
-            <div class="col-4 card-prod">
-                <img src="img/camaras rodado 28/CAMARA DE BICICLETA RODADO 28 URBANA 622 MM ANCHO 32 MM VALVUL.jpg" alt="">
+            
+            <div class="col-4 card-prod" data-id="7" data-nombre="Camara rodado 28" data-precio="95000" data-img="img/camaras rodado 28/CAMARA DE BICICLETA RODADO 28 URBANA 622 MM ANCHO 32 MM VALVUL.jpg">
+                <img src="img/camaras rodado 28/CAMARA DE BICICLETA RODADO 28 URBANA 622 MM ANCHO 32 MM VALVUL.jpg" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card">Camara rodado 28</h4>
                 <p class="descripcion-card">texto</p>
                 <div class="raiting">
@@ -298,9 +299,9 @@
                 <button class="btn-card">Comprar</button>
             </div>
 
-            <!--Tarjeta producto individual-->
-            <div class="col-4 card-prod">
-                <img src="img/caja central press fit/CAJA PEDALERA SELLADA PRESS FIT DIAMETRO 41 MM LARGO  (1).jpg" alt="">
+            
+            <div class="col-4 card-prod" data-id="8" data-nombre="Caja central press" data-precio="95000" data-img="img/caja central press fit/CAJA PEDALERA SELLADA PRESS FIT DIAMETRO 41 MM LARGO  (1).jpg">
+                <img src="img/caja central press fit/CAJA PEDALERA SELLADA PRESS FIT DIAMETRO 41 MM LARGO  (1).jpg" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card">Caja central press</h4>
                 <p class="descripcion-card">texto</p>
                 <div class="raiting">
@@ -310,13 +311,13 @@
                     <i class="fi fi-sr-heart"></i>
                     <i class="fi fi-rr-heart"></i>
                 </div>
-                <p class="precio-card">$95.000</p>
+                <p class="precio-card">$200.000</p>
                 <button class="btn-card">Comprar</button>
             </div>
 
-            <!--Tarjeta producto individual-->
-            <div class="col-4 card-prod">
-                <img src="img/cadenas/cadena02.jpg" alt="">
+         
+            <div class="col-4 card-prod" data-id="9" data-nombre="Cadena" data-precio="95000" data-img="img/cadenas/cadena02.jpg">
+                <img src="img/cadenas/cadena02.jpg" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card">Cadena</h4>
                 <p class="descripcion-card">texto</p>
                 <div class="raiting">
@@ -330,9 +331,9 @@
                 <button class="btn-card">Comprar</button>
             </div>
 
-            <!--Tarjeta producto individual-->
-            <div class="col-4 card-prod">
-                <img src="img/cascos/casco03.jpg" alt="">
+       
+            <div class="col-4 card-prod" data-id="10" data-nombre="Casco" data-precio="95000" data-img="img/cascos/casco03.jpg">
+                <img src="img/cascos/casco03.jpg" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card">Casco</h4>
                 <div class="descripcion-card">Casco de bici</div>
                 <div class="raiting">
@@ -346,9 +347,9 @@
                 <button class="btn-card">Comprar</button>
             </div>
 
-            <!--Tarjeta producto individual-->
-            <div class="col-4 card-prod">
-                <img src="img/cascos/casco04.jpg" alt="">
+           
+            <div class="col-4 card-prod" data-id="11" data-nombre="Casco" data-precio="95000" data-img="img/cascos/casco04.jpg">
+                <img src="img/cascos/casco04.jpg" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card">Casco</h4>
                 <p class="descripcion-card">Casco de bici</p>
                 <div class="raiting">
@@ -361,10 +362,10 @@
                 <p class="precio-card">$95.000</p>
                 <button class="btn-card">Comprar</button>
             </div>
-
-            <!--Tarjeta producto individual-->
-            <div class="col-4 card-prod">
-                <img src="img/bicis/bici02.jpeg" alt="">
+            
+            
+            <div class="col-4 card-prod" data-id="12" data-nombre="Bici locona" data-precio="95000" data-img="img/bicis/bici02.jpeg">
+                <img src="img/bicis/bici02.jpeg" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card">Bici locona</h4>
                 <p class="descripcion-card">Bicicleta marca venzo</p>
                 <div class="raiting">
@@ -374,14 +375,19 @@
                     <i class="fi fi-sr-heart"></i>
                     <i class="fi fi-rr-heart"></i>
                 </div>
-                <p class="precio-card">$95.000</p>
+                <p class="precio-card">$100.000</p>
                 <button class="btn-card">Comprar</button>
             </div>
-
+        
         </div>
     </div>
+    -->
 
 
+    <!-- Productos filtrados 
+    <div id="product-container" class="row">
+    </div>-->
+      
 
     <!--Informacion sobre nosotros-->
     <div class="nosotros" id="nosotros">
@@ -455,6 +461,7 @@
     </footer>
 
     <script src="js/script-carrito.js"></script>
+    <script type="module" src="js/main.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
