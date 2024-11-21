@@ -44,10 +44,10 @@ function renderProducts() {
   filteredProducts.forEach(product => {
     const productCard = `
       <div class="col-4 card-prod" data-id="${product.id}" data-nombre="${product.nombre}" data-precio="${product.precio}" data-img="${product.imagen}">
-        <img src="${product.image}" alt="${product.name}" class="cart-item-img">
-        <h4 class="titulo-card">${product.name}</h4>
-        <p class="descripcion-card">${product.description}</p>
-        <p class="precio-card">$${product.price.toFixed(2)}</p>
+        <img src="${product.imagen}" alt="${product.nombre}" class="cart-item-img">
+        <h4 class="titulo-card">${product.nombre}</h4>
+        <p class="descripcion-card">${product.descripcion}</p>
+        <p class="precio-card">$${product.precio.toFixed(2)}</p>
         <div class="rating">
           ${[...Array(5)].map((_, i) => `
             <span class="${i < product.rating ? 'filled' : ''}">★</span>
