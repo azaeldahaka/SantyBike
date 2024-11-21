@@ -431,4 +431,18 @@ ul{
     background-color: #f9f9f9;
 }
 
+#apply-filters-btn {
+    display: inline-block;
+    background-color: #8f8f8f;
+    color: #FFF;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 7px;
+    transition: background 0.5ms;
+}
+
+#apply-filters-btn:hover {
+    background: #afafaf;
+}
+
 /*-- Fin del boton de filtro--*/
