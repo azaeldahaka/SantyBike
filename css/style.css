@@ -261,6 +261,15 @@ ul{
     list-style-type: none;
 }
 
+/* Contenedor de productos */
+#productos-container {
+    display: grid; /* Usamos Grid Layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta el número de columnas automáticamente */
+    gap: 20px; /* Espacio entre las tarjetas */
+    padding: 20px;
+}
+
+
 /* PRODUCTOS */
 .titulo-card{
     font-weight: 600;
@@ -297,7 +306,7 @@ ul{
     transform:scale(1.1);
 }
 
-
+/*-------------------ESTILO NOSOTROS*/
 
 .info-nosotros{
     padding: 170px 0 100px 0;

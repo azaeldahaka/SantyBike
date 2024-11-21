@@ -155,34 +155,39 @@
         </div>
     </div>
 
-    <!-- Boton de filtro -->
-    <div>
-        <button id="apply-filters-btn">Aplicar Filtro</button> <!-- Botón para aplicar filtro -->
-        <select id="filter-options" class="hidden">
-          <option value="all">Todos</option>
-          <option value="highRated">Mejor Calificados</option>
-          <option value="lowPrice">Precio &lt; $500</option>
-          <option value="highPrice">Precio &gt;= $500</option>
-          <option value="cadenas">Cadenas</option>
-          <option value="cajas">Cajas</option>
-          <option value="cascos">Cascos</option>
-        </select>
-      
-      
-        <div id="product-grid">
-          <!-- Los productos filtrados se mostrarán aquí -->
+
+    <!-- Contenedor de productos -->
+    <div class="small-container" id="productos">
+        <h2 class="titulo titulo-prod">Productos</h2>
+
+        <!-- Boton de filtro -->
+        <div>
+            <button id="apply-filters-btn">Aplicar Filtro</button>
+            <select id="filter-options">
+            <option value="all">Todos</option>
+            <option value="highRated">Mejor Calificados</option>
+            <option value="lowPrice">Precio &lt; $50000</option>
+            <option value="highPrice">Precio &gt;= $50000</option>
+            <option value="cadenas">Cadenas</option>
+            <option value="cajas">Cajas</option>
+            <option value="cascos">Cascos</option>
+            </select>
+        </div>
+        <!--Fin boton de filtro-->
+
+        <div class="row filter-category" id="productos-container">
+            <!--Aqui se supone que se renderizan los productos-->
+    
         </div>
     </div>
-    <!-- Fin de Boton de filtro-->
-
 
     
-    <!--Productoss-->
+    <!--Productoss
     <div class="small-container" id="productos">
         <h2 class="titulo titulo-prod">Productos</h2>
         <div class="row filter-category">
 
-            <!--Tarjeta producto individual-->
+            
             <div class="col-4 card-prod" data-id="1" data-nombre="Bici locona" data-precio="80000" data-img="img/bicis/bici01.png">
                 <img src="img/bicis/bici01.png" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card">Bici locona</h4>
@@ -198,7 +203,7 @@
                 <button class="btn-card">Comprar</button>
             </div>
 
-            <!--Tarjeta producto individual-->
+            
             <div class="col-4 card-prod" data-id="2" data-nombre="Bici locona 2" data-precio="120000" data-img="img/bicis/bici03.jpeg">
                 <img src="img/bicis/bici03.jpeg" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card">Bici locona 2</h4>
@@ -214,7 +219,7 @@
                 <button class="btn-card">Comprar</button>
             </div>
 
-            <!--Tarjeta producto individual-->
+            
             <div class="col-4 card-prod" data-id="3" data-nombre="Bici locona 3" data-precio="95000" data-img="img/bicis/bici02.jpeg">
                 <img src="img/bicis/bici02.jpeg" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card">Bici locona 3</h4>
@@ -230,7 +235,7 @@
                 <button class="btn-card">Comprar</button>
             </div>
 
-            <!--Tarjeta producto individual-->
+            
             <div class="col-4 card-prod" data-id="4" data-nombre="Cadena" data-precio="80000" data-img="img/cadenas/cadena01.jpg">
                 <img src="img/cadenas/cadena01.jpg" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card" >Cadena</h4>
@@ -246,7 +251,7 @@
                 <button class="btn-card">Comprar</button>
             </div>
 
-            <!--Tarjeta producto individual-->
+           
             <div class="col-4 card-prod" data-id="5" data-nombre="Caja central" data-precio="120000" data-img="img/caja central cuadrante/caja01.jpg">
                 <img src="img/caja central cuadrante/caja01.jpg" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card">Caja central</h4>
@@ -262,7 +267,7 @@
                 <button class="btn-card">Comprar</button>
             </div>
 
-            <!--Tarjeta producto individual-->
+           
             <div class="col-4 card-prod" data-id="6" data-nombre="Camara rodado 26" data-precio="95000" data-img="img/camaras rodado 26/camara_rodado26_01.jpg">
                 <img src="img/camaras rodado 26/camara_rodado26_01.jpg" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card">Camara rodado 26</h4>
@@ -278,7 +283,7 @@
                 <button class="btn-card">Comprar</button>
             </div>
 
-            <!--Tarjeta producto individual-->
+            
             <div class="col-4 card-prod" data-id="7" data-nombre="Camara rodado 28" data-precio="95000" data-img="img/camaras rodado 28/CAMARA DE BICICLETA RODADO 28 URBANA 622 MM ANCHO 32 MM VALVUL.jpg">
                 <img src="img/camaras rodado 28/CAMARA DE BICICLETA RODADO 28 URBANA 622 MM ANCHO 32 MM VALVUL.jpg" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card">Camara rodado 28</h4>
@@ -294,7 +299,7 @@
                 <button class="btn-card">Comprar</button>
             </div>
 
-            <!--Tarjeta producto individual-->
+            
             <div class="col-4 card-prod" data-id="8" data-nombre="Caja central press" data-precio="95000" data-img="img/caja central press fit/CAJA PEDALERA SELLADA PRESS FIT DIAMETRO 41 MM LARGO  (1).jpg">
                 <img src="img/caja central press fit/CAJA PEDALERA SELLADA PRESS FIT DIAMETRO 41 MM LARGO  (1).jpg" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card">Caja central press</h4>
@@ -310,7 +315,7 @@
                 <button class="btn-card">Comprar</button>
             </div>
 
-            <!--Tarjeta producto individual-->
+         
             <div class="col-4 card-prod" data-id="9" data-nombre="Cadena" data-precio="95000" data-img="img/cadenas/cadena02.jpg">
                 <img src="img/cadenas/cadena02.jpg" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card">Cadena</h4>
@@ -326,7 +331,7 @@
                 <button class="btn-card">Comprar</button>
             </div>
 
-            <!--Tarjeta producto individual-->
+       
             <div class="col-4 card-prod" data-id="10" data-nombre="Casco" data-precio="95000" data-img="img/cascos/casco03.jpg">
                 <img src="img/cascos/casco03.jpg" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card">Casco</h4>
@@ -342,7 +347,7 @@
                 <button class="btn-card">Comprar</button>
             </div>
 
-            <!--Tarjeta producto individual-->
+           
             <div class="col-4 card-prod" data-id="11" data-nombre="Casco" data-precio="95000" data-img="img/cascos/casco04.jpg">
                 <img src="img/cascos/casco04.jpg" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card">Casco</h4>
@@ -357,8 +362,8 @@
                 <p class="precio-card">$95.000</p>
                 <button class="btn-card">Comprar</button>
             </div>
-
-            <!--Tarjeta producto individual-->
+            
+            
             <div class="col-4 card-prod" data-id="12" data-nombre="Bici locona" data-precio="95000" data-img="img/bicis/bici02.jpeg">
                 <img src="img/bicis/bici02.jpeg" alt="" id="product-img" class="cart-item-img">
                 <h4 class="titulo-card">Bici locona</h4>
@@ -373,15 +378,15 @@
                 <p class="precio-card">$100.000</p>
                 <button class="btn-card">Comprar</button>
             </div>
-
+        
         </div>
     </div>
+    -->
 
 
-    <!-- Productos filtrados -->
+    <!-- Productos filtrados 
     <div id="product-container" class="row">
-        <!-- Aquí solo se cargan los productos cuando se aplica el filtro -->
-    </div>
+    </div>-->
       
 
     <!--Informacion sobre nosotros-->
@@ -456,8 +461,7 @@
     </footer>
 
     <script src="js/script-carrito.js"></script>
-    <script src="js/filtro.js"></script>
-    <script src="js/boton-filtro.js"></script>
+    <script type="module" src="js/main.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

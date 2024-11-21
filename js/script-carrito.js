@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Añadir al carrito
-    document.querySelectorAll('.btn-card').forEach(btn => {
-        btn.addEventListener('click', (e) => {
+    document.getElementById('productos-container').addEventListener('click', (e) => {
+        if (e.target.classList.contains('btn-card')) {
             const card = e.target.closest('.card-prod');
             const product = {
                 id: card.getAttribute('data-id'),
@@ -32,8 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 img: card.getAttribute('data-img')
             };
             addToCart(product);
-        });
+        }
     });
+    
 
      // Cerrar el carrito al hacer clic fuera de él
      document.addEventListener('click', (e) => {

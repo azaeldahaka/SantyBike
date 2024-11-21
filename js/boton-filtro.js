@@ -35,9 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (filter === 'highRated') {
             filteredProducts = productos.filter(product => product.raiting >= 4);  // Filtro por calificación alta
         } else if (filter === 'lowPrice') {
-            filteredProducts = productos.filter(product => product.precio < 500);  // Filtro por precio bajo
+            filteredProducts = productos.filter(product => product.precio < 50000);  // Filtro por precio bajo
         } else if (filter === 'highPrice') {
-            filteredProducts = productos.filter(product => product.precio >= 500);  // Filtro por precio alto
+            filteredProducts = productos.filter(product => product.precio >= 50000);  // Filtro por precio alto
         } else if (filter === 'cadenas') {
             filteredProducts = productos.filter(product => product.categoria === 'cadenas');
         } else if (filter === 'cajas') {
